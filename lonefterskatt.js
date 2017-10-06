@@ -71,6 +71,11 @@ app.get('/', function (req, res) {
 
 app.use(express.static('public'));
  
-app.listen(3000);
+app.set('port', ( process.env.PORT || 3000 ));
+app.listen( app.get( 'port' ), function() {
+  console.log( 'Node server is running on port ' + app.get( 'port' ));
+  });
 
-console.log('running port 3000')
+//app.listen(3000);
+
+//console.log('running port 3000')
