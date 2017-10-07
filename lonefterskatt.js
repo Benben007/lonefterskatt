@@ -1,4 +1,4 @@
-//forex
+
 var express = require('express');
 var mustacheExpress = require('mustache-express');
 
@@ -10,8 +10,9 @@ app.set('views', __dirname + '/views');
 app.get('/', function (req, res) {
 
 	number1=req.query['number1']
-	//number2=req.query['number2']
-	//number3=req.query['number3']
+	kyrkan=req.query['kyrkan']
+	kommun1=req.query['kommun1']
+	kommun2=req.query['kommun2']
 	
 	var p1=null
 	
@@ -40,6 +41,9 @@ app.get('/', function (req, res) {
 		g4=p1;
 		g5=p2;
 		g6=p3; */
+		console.log(kyrkan)
+		console.log(kommun1)
+		console.log(kommun2)
 
 	}
 	
