@@ -1,0 +1,81 @@
+/*body {
+  font-family: Georgia, serif;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}*/
+body {
+  font-family: 'Roboto', sans-serif;  
+  font-weight: 300;  /*normal|bold|bolder|lighter|number|initial|inherit;*/
+}
+
+header {
+  padding: 20px 0; /* padding: The space between the content and the border: here top and bottom + right and left*/
+}
+
+header .row,
+footer .row {
+  display: flex;
+  /*align-items: center; align-items: stretch|center|flex-start|flex-end|baseline|initial|inherit; here at the center of the container*/
+  /*border: 2px solid black;*/
+}
+
+header h1 {
+  font-weight: 700;
+  margin: 0; /*The margin properties set the size of the white space outside the border.*/
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end; /*The justify-content property aligns the flexible container's items when the items do not use all available space on the main-axis (horizontally).*/
+}
+
+header p {
+  padding: 0 20px;
+  margin: 0px;
+  font-size: 30px
+
+}
+
+
+
+
+#wrapper {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px grey;
+  margin: 100px 300px 100px 300px;
+  padding: 100px 100px 100px 100px;
+  background-position: center top; /*The background-position property sets the starting position of a background image.*/
+  font-size: 30px;
+
+  
+} 
+/*img { 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  align-self: : middle; /*The align-self property specifies the alignment for the selected item inside the flexible container.
+  margin-top: 5em;
+  margin-bottom: 2em;
+  border: 6px solid black;
+  width: 1000px; /*The width property sets the width of an element.
+  height: 228px; /*The height property sets the width of an element.*/                      
+/*}*/
+p { 
+  font-family: Lato Light;
+  margin-top: 1em;
+  color: red;
+}   
+
+.jumbotron {
+  display: flex;
+  align-items: center;
+  color: #82AA3F;
+  background-color: #82AA3F;
+  height: 100px;
+  text-shadow: 0.25px 0.25px 0.25px #000000; /*The text-shadow property adds shadow to text.*/
+}
