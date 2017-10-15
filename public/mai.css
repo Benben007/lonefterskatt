@@ -5,38 +5,45 @@
   text-align: center;
   width: 100%;
 }*/
-body {
-  font-family: 'Roboto', sans-serif;  
-  font-weight: 300;  /*normal|bold|bolder|lighter|number|initial|inherit;*/
-}
 
-header {
-  padding: 20px 0; /* padding: The space between the content and the border: here top and bottom + right and left*/
-}
+/*body {
+  font-family: 'Arial', sans-serif; 
+    /*normal|bold|bolder|lighter|number|initial|inherit;
+}*/
 
-header .row,
+/*header {
+  padding: 0px 0; /* padding: The space between the content and the border: here top and bottom + right and left
+  border: 2px solid black;
+
+}*/
+
+/*header .row,
 footer .row {
   display: flex;
-  /*align-items: center; align-items: stretch|center|flex-start|flex-end|baseline|initial|inherit; here at the center of the container*/
-  /*border: 2px solid black;*/
-}
+  border: 2px solid red;
+  margin: 0 0px;
+  align-items: center; align-items: stretch|center|flex-start|flex-end|baseline|initial|inherit; here at the center of the container*
+  border: 2px solid black;
+}*/
 
-header h1 {
+/*header h1 {
   font-weight: 700;
-  margin: 0; /*The margin properties set the size of the white space outside the border.*/
-}
+  margin: 0; /*The margin properties set the size of the white space outside the border.
+}*/
 
-header nav {
+/*header nav {
   display: flex;
-  justify-content: flex-end; /*The justify-content property aligns the flexible container's items when the items do not use all available space on the main-axis (horizontally).*/
-}
+  justify-content: flex-end; /*The justify-content property aligns the flexible container's items when the items do not use all available space on the main-axis (horizontally).
+  border: 2px solid yellow;
+}*/
 
-header p {
-  padding: 0 20px;
+/*header p {
+  padding: 0 0px;
   margin: 0px;
-  font-size: 30px
+  font-size: 20px;
+  border: 2px solid red;
 
-}
+}*/
 
 
 
@@ -47,11 +54,34 @@ header p {
   border: 2px solid black;
   border-radius: 20px;
   box-shadow: 0px 0px 15px grey;
-  align-items: center;
-  padding: 100px 100px 100px 100px;
-  background-position: center top; /*The background-position property sets the starting position of a background image.*/
-  font-size: 30px; 
+  /*margin: 100px 100px 100px 100px;*/
+  padding: 50px 50px 50px 50px;
+  /*background-position: center top; The background-position property sets the starting position of a background image.*/
+  font-size: 20px;
+  
 } 
+
+img {
+    width:40%;
+    height: 40%;
+    margin: 0px 0px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    /*border-collapse: collapse;*/
+    width: 60%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+
+
+
 /*img { 
   display: block;
   margin-left: auto;
@@ -63,17 +93,18 @@ header p {
   width: 1000px; /*The width property sets the width of an element.
   height: 228px; /*The height property sets the width of an element.*/                      
 /*}*/
-p { 
+
+/*p { 
   font-family: Lato Light;
   margin-top: 1em;
   color: red;
-}   
+} */  
 
 .jumbotron {
-  display: flex;
+  /*display: flex;
   align-items: center;
-  color: #82AA3F;
+  color: #82AA3F;*/
   background-color: #82AA3F;
   height: 100px;
-  text-shadow: 0.25px 0.25px 0.25px #000000; /*The text-shadow property adds shadow to text.*/
+  /*text-shadow: 0.25px 0.25px 0.25px #000000; /he text-shadow property adds shadow to text.*/
 }
