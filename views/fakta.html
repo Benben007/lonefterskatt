@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="mai.css">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="scriptLonefterskatt.js"></script>
+    <script>
+      var data1 = {{{data1}}};
+      var data2 = {{{data2}}}
+    </script>  
+		<title>EgenEkonomi</title>
+	</head>
+  <body>
+
+    <!---<header class="container">-->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="container" href="/">
+              <img alt="Brand" src="logo2.png">
+            </a>
+          </div>        
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item active"><a href="/">Home</a></li>
+            <li><a href="/fakta">Fakta och statistik</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Räkna själv
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/rakna">Räkna din lön efter skatt</a> <br />
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li><a href="#">Mer</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    <section class="jumbotron">
+    </section>
+
+    <h3><strong>Fakta och statistik</strong></h3> <br>
+
+    <h4><strong>Sveriges Ekonomi</strong></h4> <br>
+    <table id="tablepress-7" class="tablepress tablepress-id-7"><thead><tr class="row-1 odd"><th class="column-1">Nyckeltal</th><th class="column-2">Antal/utveckling</th><th class="column-3">Mätperiod</th></tr></thead><tbody class="row-hover"><tr class="row-2 even"><td class="column-1">Folkmängd</td><td class="column-2">10.093.734 st</td><td class="column-3">sep 2017</td></tr><tr class="row-3 odd"><td class="column-1">Arbetslöshet</td><td class="column-2">6,2 %</td><td class="column-3">sep 2017</td></tr><tr class="row-4 even"><td class="column-1">BNP</td><td class="column-2">4405 Mdkr</td><td class="column-3">2016</td></tr><tr class="row-5 odd"><td class="column-1">BNP utv.</td><td class="column-2">3,1 %</td><td class="column-3">kv 2 17 jmf m. kv 2 16</td></tr><tr class="row-6 even"><td class="column-1">BNP prognos</td><td class="column-2">3,0 %</td><td class="column-3">helåret 2017</td></tr><tr class="row-7 odd"><td class="column-1">BNP per capita</td><td class="column-2">443.900 kr</td><td class="column-3">2016</td></tr><tr class="row-8 even"><td class="column-1">Inflation, KPIF</td><td class="column-2">1,8 %</td><td class="column-3">okt -17 jmf okt -16</td></tr><tr class="row-9 odd"><td class="column-1">Reporäntan</td><td class="column-2">-0,50 %</td><td class="column-3">just nu</td></tr><tr class="row-10 even"><td class="column-1">Statslåneräntan 30:e nov</td><td class="column-2">0,27 %<br> 0,65 %</td><td class="column-3">30 nov 2016<br> 30 nov 2015</td></tr><tr class="row-11 odd"><td class="column-1">Statens resultaträkning</td><td class="column-2">29 Mdkr (-17)</td><td class="column-3">2016 (2015)</td></tr><tr class="row-12 even"><td class="column-1">Statsskulden</td><td class="column-2">1296 Mdkr</td><td class="column-3">okt 2017</td></tr><tr class="row-13 odd"><td class="column-1">Statsskulden/BNP</td><td class="column-2">29,4 %</td><td class="column-3">just nu</td></tr><tr class="row-14 even"><td class="column-1">Statsskulden per invånare</td><td class="column-2">128.396 kr</td><td class="column-3">just nu</td></tr><tr class="row-15 odd"><td class="column-1">Handelsbalansen</td><td class="column-2">2,7 %</td><td class="column-3">2016</td></tr><tr class="row-16 even"><td class="column-1">Skattetryck</td><td class="column-2">44,0 %</td><td class="column-3">2016</td></tr><tr class="row-17 odd"><td class="column-1">Välståndsligan</td><td class="column-2">10:e plats</td><td class="column-3">2016</td></tr></tbody></table>
+
+
+    <br><br>
+    <p><strong>Folkmängd</strong> = antalet invånare inom Sveriges geografiska område.</p>
+    <p><strong>Arbetslöshet</strong> = hur stor andel av arbetskraften mellan 16-64 år som var öppet arbetslösa den senaste månaden.</p>
+    <p><strong>Bruttonationalprodukten (BNP)</strong> = värdet av alla varor och tjänster som producerats i Sverige under ett år. Uttrycks här som absoluta tal och som utveckling jämfört med motsvarande period förra året.</p>
+    <p><strong>Bruttonationalprodukten (utveckling)</strong> = värdet av alla varor och tjänster som producerats i Sverige. Uttrycks här procentuellt som kvartalsutveckling jämfört med motsvarande kvartal förra året.</p>
+    <p><strong>Bruttonationalprodukten (BNP) prognos</strong> = Konjunkturinstitutets prognos för BNP-utvecklingen.</p>
+    <p><strong>BNP per capita</strong> = bruttonationalprodukten utslaget per invånare i riket.</p>
+    <p><strong>Konsumentprisindex (inflation)</strong> = ökningen av den allmänna prisnivån i Sverige. Uttrycks här som KPIF,&nbsp;konsumentprisindex med fast ränta, jämfört med motsvarande period förra året.</p>
+    <p><strong>Reporäntan</strong> = den ränta som banker kan låna eller placera till i Riksbanken under sju dagar.</p>
+    <p><strong>Statslåneräntan</strong> = bestäms av Riksgälden och speglar den långa riskfria räntan på marknaden. Ligger till beräkningsgrund för många ekonomiska företeelser.</p>
+    <p><strong>Statens resultaträkning</strong> = statens resultat efter ett kalenderår.</p>
+    <p><strong>Statsskulden</strong> = de samlade under- och överskotten i statens budget över tiden.</p>
+    <p><strong>Statsskuldens andel av BNP</strong> = hur stor statsskuldens del är av BNP. Den aktuella statsskulden ställs i relation till föregående års BNP.</p>
+    <p><strong>Statsskulden utslaget per invånare</strong> = hur stor statsskulden är utslaget per invånare i Sverige.</p>
+    <p><strong>Handelsbalansen</strong> = skillnaden mellan Sveriges export och import. Här sett som andel av BNP.</p>
+    <p><strong>Skattetryck</strong> = Sveriges samlade skatteuttag som andel av BNP.</p>
+    <p><strong>Välståndsligan</strong> = en ”liga” där OECD-ländernas BNP per capita justerat för köpkraft mäts och jämförs.</p>
+    <address>Källor:<br> Riksbanken, Riksgälden, Ekonomistyrningsverket, SCB, Konjunkturinstitutet, Ekonomifakta, OECD</address>
+
+    
+
+
+   
+
+    <footer class="container">
+      <div class="row">
+        <p class="col-sm-4">&copy; 2016 EgenEkonomi</p>
+        <ul class="col-sm-8">
+          <li class="col-sm-1"><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/twitter.svg"></li>
+          <li class="col-sm-1"><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/facebook.svg"></li>
+          <li class="col-sm-1"><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/instagram.svg"></li>
+          <li class="col-sm-1"><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/medium.svg"></li>
+        </ul>
+      </div>
+    </footer> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
+  </body>
+</html>
