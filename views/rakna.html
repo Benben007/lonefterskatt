@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="mai.css">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="scriptLonefterskatt.js"></script>
+    <script>
+      var data1 = {{{data1}}};
+      var data2 = {{{data2}}}
+    </script>  
+		<title>EgenEkonomi</title>
+	</head>
+  <body>
+
+    <!---<header class="container">-->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="container" href="/">
+              <img alt="Brand" src="logo2.png">
+            </a>
+          </div>        
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item active"><a href="/">Home</a></li>
+            <li><a href="/fakta">Fakta och statistik</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Räkna själv
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/rakna">Räkna din lön efter skatt</a> <br />
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li><a href="#">Mer</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    <section class="jumbotron">
+    </section>
+
+   
+<!---<table align="center" border="1"> -->
+    <!---<img src="https://img-k.okeinfo.net/content/2017/06/07/320/1709558/krisis-qatar-ekonomi-negara-teluk-terguncang-eFV6cZwpdG.jpg" class="img-fluid" alt="Responsive image" />-->
+    
+        <!--- <tr>
+                <th>
+                      <label>Amount:</label>
+                      <input type="number" name="number1" placeholder="ex:8">
+                      <label>Buying rate:</label>
+                      <input type="number" step="0.01" name="number2" placeholder="ex:7">
+                      <label>Selling rate:</label>
+                      <input type="number" step="0.01" name="number3" placeholder="ex:7">
+                      <input type="submit" value="Submit">
+
+                </th>
+                <th rowspan="8"><img src="http://ii.alatest.com/css/staticpages/contact.jpg" alt="Test Image" /></th>
+            </tr> -->
+    <div id="wrapper" class="container">
+      <form name="Form">
+        <h3><strong>Beräkna lön efter skatt</strong></h3> 
+        <font size="2em" color="grey">Sidan uppdaterades senast 2017-10-15 </font><br /><br />
+        Beräkna hur mycket pengar du får behålla av din lön varje månad och hur mycket du betalar i inkomstskatt.<br /><br />
+        <div class="form-group row">  			 
+          <div class="col-xs-3">
+            <label for="example-number-input">Vad har du i lön?</label>
+            <input class="form-control" type="number" name="number1" id="example-number-input">
+  			  </div> 
+  	    </div>
+
+    
+
+        <div class="form-group row">
+          <div class="col-xs-5">
+          <label for="kommuner">Vilken församling bor du i?</label>
+            <input class="form-control" name="kommun1" type="text" list="kommuner" />
+              <datalist id="kommuner">
+                <option>Ale</option><option>Alingsås</option><option>Alvesta</option>
+                <option>Umeå</option>
+                <option>Linköping</option>
+                <option>Bro</option>
+              </datalist>
+          </div>
+        </div>
+
+       
+                     
+  		<!--<div class="form-group row">
+    			<label for="example-number-input" class="col-xs-2 col-form-label">Buying rate:</label>
+    			<div class="col-xs-10">
+      			<input class="form-control" type="number" name="number2" step="0.01" id="example-number-input">
+    			</div>
+  		</div>
+  		<div class="form-group row">
+    			<label for="example-number-input" class="col-xs-2 col-form-label">Selling rate:</label>
+    			<div class="col-xs-10">
+      			<input class="form-control" type="number" name="number3" step="0.01" id="example-number-input">
+    			</div>
+  		</div>-->
+          <!---<div class="checkbox">
+          <label>
+            <input type="checkbox" name="del"> Delete
+          </label>
+        </div><br/><br/>-->
+          <div class="form-check row">
+            <div class="col-xs-5">
+             <label class="form-check-label"> 
+              <input class="form-check-input" type="checkbox" name="kyrkan">            Medlem i Svenska kyrkan <br /><br />
+             </label>
+            </div>
+          </div>
+  		  <button type="submit" value="Submit" class="btn btn-primary">Beräkna</button> <br /><br />
+      </form>
+             
+      <strong>Resultat: </strong>Du får {{behallning}} kr i månaden efter skatt <br /> <br />
+      <!---Arbetsgivaravgift <strong>{{arbetsgivaravgift}}</strong> <br /> 
+      Kommunalskatt <strong>{{kommunalskatt}}</strong><br />
+      Jobbavdrag <strong>{{jobbavdrag}}</strong><br />
+      Landstingsskatt <strong>{{landstingsskatt}}</strong><br />
+      Statligskatt <strong>{{statligskatt}}</strong><br />
+      Kyrkoavgift <strong>{{kyrkoavgift}}</strong><br />-->
+      <strong>Totalskatt: </strong>{{totalskatt}}% <br /> <br />
+      
+      <table>
+        <tr bgcolor="blue">
+          <th>Arbetsgivaravgift</th>
+          <th>{{arbetsgivaravgift}} kr/mån</th>
+        </tr>
+        <tr bgcolor="red">
+          <th>Kommunalskatt</th>
+          <th>{{kommunalskatt}} kr/mån</th>
+        </tr>
+        <tr bgcolor="red">
+          <th>Jobbavdrag</th>
+          <th>{{jobbavdrag}} kr/mån</th>
+        </tr>
+        <tr bgcolor="orange">
+          <th>Landstingsskatt</th>
+          <th>{{landstingsskatt}} kr/mån</th>
+        </tr>
+        <tr bgcolor="">
+          <th>Statligskatt</th>
+          <th>{{statligskatt}} kr/mån</th>
+        </tr>
+        <tr bgcolor="purple">
+          <th>Kyrkoavgift</th>
+          <th>{{kyrkoavgift}} kr/mån</th>
+        </tr>
+        <tr bgcolor="green">
+          <th>Behållning</th>
+          <th>{{behallning}} kr/mån</th>
+        </tr>
+      </table>
+      <div id="table_div"></div>
+      <div id="chartv"></div>
+    
+      Din arbetsgivare använder vanligtvis en tabell från Skatteverket för att beräkna den preliminära skatt som ska dras från din lön varje månad. Vid deklarationen beräknas sedan din slutgiltiga skatt, som påverkas av exempelvis ränteavdrag, försäljning av värdepapper och fastigheter.<br /> 
+      Beräkningen av <strong>jobbavdrag</strong> (kallas även jobbskatteavdrag) ovan gäller endast för dem som är yngre än 65 år och som har en månadslön över c:a 9000 kr.<br /> 
+      Med begreppet <strong>kyrkoavgift</strong> ovan menas avgift till Svenska kyrkan samt begravningsavgift. Även om du inte är medlem i Svenska kyrkan, måste du betala begravningsavgiften.<br /> 
+      <strong>Statlig skatt</strong> betalas av de som beräknas tjäna över en viss summa per år. På inkomster över denna summa är den statliga skatten 20% och på ännu högre inkomster är den statliga skatten 25%. <a href="https://www.skatteverket.se/privat/sjalvservice/svarpavanligafragor/beloppprocentsatser/privatbeloppfaq/narskamanbetalastatliginkomstskattochhurhogarden.5.10010ec103545f243e8000166.html">Läs mer på Skatteverkets webbplats.</a>      
+    </div>
+    <footer class="container">
+      <div class="row">
+        <p class="col-sm-4">&copy; 2016 EgenEkonomi</p>
+        <ul class="col-sm-8">
+          <li class="col-sm-1"><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/twitter.svg"></li>
+          <li class="col-sm-1"><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/facebook.svg"></li>
+          <li class="col-sm-1"><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/instagram.svg"></li>
+          <li class="col-sm-1"><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/medium.svg"></li>
+        </ul>
+      </div>
+    </footer> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
+  </body>
+</html>
