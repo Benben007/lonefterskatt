@@ -21,8 +21,9 @@ table.addRows(data2);
 
 // Set chart options
 var options = {'title':'Dashboard',
-               'width': 600,
-               'height':600,
+               'width': 670,
+               'height':670,
+               'is3D': true,
            };
 
 // Instantiate and draw our chart, passing in some options.
