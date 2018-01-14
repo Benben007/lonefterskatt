@@ -7,17 +7,8 @@ app.engine('html', mustacheExpress());
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 
-app.get('/', function (req, res) {
-	res.render ('home.html',{
-  		
-  });
-});
 
-app.get('/fakta', function (req, res) {
-	res.render ('fakta.html',{
-  		
-  });
-});
+
 
 
 var kommuner = {
@@ -83,13 +74,15 @@ var kommuner = {
 }
 //https://www.di.se/nyheter/sa-blir-din-kommunalskatt-2017/
 
-app.get('/rakna', function (req, res) {
+app.get('/', function (req, res) {
 	number1=req.query['number1']
 	kyrkan=req.query['kyrkan']
 	kommun1=req.query['kommun1']
 
 	function calculate(p1){
 		arbetsgivaravgift=p1*0.3142  
+		number=p1*1.3142
+		p1=p1
 		//kommune=kommuner[kommun1]
 		//console.log(kommune)
 		kommunalskatt=p1*kommuner[kommun1].kommunalskatt		/*DI*/
@@ -97,43 +90,43 @@ app.get('/rakna', function (req, res) {
 			jobbavdrag=0
 		}
 		else if (p1*12<150000) {
-			jobbavdrag=p1*-0.096
+			jobbavdrag=p1*0.096
 		}
 		else if (p1*12<200000) {
-			jobbavdrag=p1*-0.083
+			jobbavdrag=p1*0.083
 		}
 		else if (p1*12<250000) {
-			jobbavdrag=p1*-0.079
+			jobbavdrag=p1*0.079
 		}
 		else if (p1*12<300000) {
-			jobbavdrag=p1*-0.076
+			jobbavdrag=p1*0.076
 		}
 		else if (p1*12<350000) {
-			jobbavdrag=p1*-0.075
+			jobbavdrag=p1*0.075
 		}
 		else if (p1*12<400000) {
-			jobbavdrag=p1*-0.074
+			jobbavdrag=p1*0.074
 		}
 		else if (p1*12<500000) {
-			jobbavdrag=p1*-0.066
+			jobbavdrag=p1*0.066
 		}
 		else if (p1*12<600000) {
-			jobbavdrag=p1*-0.053
+			jobbavdrag=p1*0.053
 		}
 		else if (p1*12<700000) {
-			jobbavdrag=p1*-0.044
+			jobbavdrag=p1*0.044
 		}
 		else if (p1*12<900000) {
-			jobbavdrag=p1*-0.033
+			jobbavdrag=p1*0.033
 		}
 		else if (p1*12<1100000) {
-			jobbavdrag=p1*-0.019
+			jobbavdrag=p1*0.019
 		}
 		else if (p1*12<1130000) {
-			jobbavdrag=p1*-0.01
+			jobbavdrag=p1*0.01
 		}
 		else if (p1*12<1500000) {
-			jobbavdrag=p1*-0.004
+			jobbavdrag=p1*0.004
 		}
 		else {
 			jobbavdrag=0
@@ -161,13 +154,13 @@ app.get('/rakna', function (req, res) {
 			kyrkoavgift=kyrkoavgift+p1*0.0097
 		}
 										/*to check if it is right*/		
-		behallning=p1-kommunalskatt-jobbavdrag-landstingsskatt-statligskatt-kyrkoavgift
+		behallning=p1-kommunalskatt+jobbavdrag-landstingsskatt-statligskatt-kyrkoavgift
 		totalskatt=100-(behallning/p1*100)
 		var data1=[]
-		data1.push(['Arbetsgivaravgift', arbetsgivaravgift],['Kommunalskatt', kommunalskatt], ['Jobbavdrag', jobbavdrag], ['Landstingsskatt', landstingsskatt], ['Statligskatt', statligskatt], ['Kyrkoavgift', kyrkoavgift], ['Behållning', p1-kommunalskatt-jobbavdrag-landstingsskatt-statligskatt-kyrkoavgift] )
+		data1.push(['Arbetsgivaravgift', arbetsgivaravgift],['Kommunalskatt', kommunalskatt], ['Jobbavdrag', jobbavdrag], ['Landstingsskatt', landstingsskatt], ['Statligskatt', statligskatt], ['Kyrkoavgift', kyrkoavgift], ['Behållning', p1-kommunalskatt+jobbavdrag-landstingsskatt-statligskatt-kyrkoavgift] )
 		dataAsString1 = JSON.stringify(data1)
 		var data2=[]
-		data2.push(['Arbetsgivaravgift', arbetsgivaravgift ],['Kommun', kommunalskatt+jobbavdrag], ['Landstingsskatt', landstingsskatt], ['Statligskatt', statligskatt], ['Kyrkoavgift', kyrkoavgift], ['Behållning', p1-kommunalskatt-jobbavdrag-landstingsskatt-statligskatt-kyrkoavgift] )
+		data2.push(['Arbetsgivaravgift', arbetsgivaravgift ],['Kommun', kommunalskatt-jobbavdrag], ['Landstingsskatt', landstingsskatt], ['Statligskatt', statligskatt], ['Kyrkoavgift', kyrkoavgift], ['Behållning', p1-kommunalskatt+jobbavdrag-landstingsskatt-statligskatt-kyrkoavgift] )
 		dataAsString2 = JSON.stringify(data2)
 		/*g=(p1*p3/p2)-p1;
 		g2=g*100/p1;
@@ -187,6 +180,8 @@ app.get('/rakna', function (req, res) {
 	if (kommun1) {
 		calculate(number1)
 	  	res.render ('rakna.html',{
+	  		number:number.toFixed(0),
+	  		number1:number1,
 	  		arbetsgivaravgift:arbetsgivaravgift.toFixed(0),
 			kommunalskatt:kommunalskatt.toFixed(0),
 			jobbavdrag:jobbavdrag.toFixed(0),
@@ -201,6 +196,8 @@ app.get('/rakna', function (req, res) {
 	}
 	else {
 		res.render ('rakna.html',{
+			number1:0,
+			p1:0,
 	  		arbetsgivaravgift:0,
 			kommunalskatt:0,
 			jobbavdrag:0,
